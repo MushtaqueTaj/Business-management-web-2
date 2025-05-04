@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Customers</h1>
+<form method="POST">
+    <input type="text" name="name" placeholder="Customer Name" required>
+    <input type="submit" value="Add Customer">
+</form>
+<ul>
+    {% for customer in customers %}
+        <li>{{ customer[1] }} <a href="/delete_customer/{{ customer[0] }}">Delete</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}

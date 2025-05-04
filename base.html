@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Business Manager</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="/">Dashboard</a> |
+            <a href="/customers">Customers</a> |
+            <a href="/sales">Sales</a>
+        </nav>
+        <hr>
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

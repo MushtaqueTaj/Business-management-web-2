@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Sales</h1>
+<form method="POST">
+    <input type="text" name="item" placeholder="Item Sold" required>
+    <input type="number" name="amount" placeholder="Amount" required>
+    <input type="submit" value="Add Sale">
+</form>
+<ul>
+    {% for sale in sales %}
+        <li>{{ sale[1] }} - ${{ sale[2] }} <a href="/delete_sale/{{ sale[0] }}">Delete</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}
